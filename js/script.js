@@ -1,18 +1,20 @@
 var html = "";
-var red;
-var green;
-var blue;
 var rgbColor;
 
 function randomColor() {
   return Math.floor(Math.random() * 256);
 }
 
+function randomRgb() {
+  var color = "rgb(";
+  color += randomColor() + ",";
+  color += randomColor() + ",";
+  color += randomColor() + ")";
+  return color;
+}
+
 for (i = 0; i < 10; i += 1) {
-  red = randomColor();
-  green = randomColor();
-  blue = randomColor();
-  rgbColor = "rgb(" + red + "," + green + "," + blue + ")";
+  rgbColor = randomRgb();
   html += '<div style="background-color:' + rgbColor + '"></div>';
 }
 
